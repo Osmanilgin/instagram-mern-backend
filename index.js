@@ -4,6 +4,7 @@ import cors from "cors"
 import dotenv from "dotenv"
 
 import postRoutes from "./routes/posts.js"
+import userRoutes from "./routes/users.js"
 
  // App Config
   const app = express()
@@ -16,7 +17,8 @@ import postRoutes from "./routes/posts.js"
   app.use(cors())
   
   app.use("/posts", postRoutes)
-  
+  app.use('/user', userRoutes)
+
   app.get('/', (req, res) => {
     res.send('Instagram Mern API')
   })
